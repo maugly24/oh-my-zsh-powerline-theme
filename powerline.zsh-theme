@@ -110,7 +110,7 @@ update_git_info() {
   else
     if [ "$POWERLINE_SHOW_GIT_ON_RIGHT" = "" ]; then
       if [ "$POWERLINE_HIDE_GIT_PROMPT_STATUS" = "" ]; then
-        POWERLINE_GIT_INFO_LEFT=" %F{blue}%K{white}"$'\ue0b0'"%F{white}%F{black}%K{white}"$'$(_omz_git_prompt_info)$(git_prompt_status)%F{white}'
+        POWERLINE_GIT_INFO_LEFT=" %F{blue}%K{white}"$'\ue0b0'"%F{white}%F{black}%K{white}"$'$(_omz_git_prompt_info)$(_omz_git_prompt_status)%F{white}'
       else
           POWERLINE_GIT_INFO_LEFT=" %F{blue}%K{white}"$'\ue0b0'"%F{white}%F{black}%K{white}"$'$(_omz_git_prompt_info)%F{white}'
       fi
@@ -118,7 +118,7 @@ update_git_info() {
     else
       POWERLINE_GIT_INFO_LEFT=""
       if [ "$POWERLINE_HIDE_GIT_PROMPT_STATUS" = "" ]; then
-        POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(_omz_git_prompt_info)$(git_prompt_status)'" %K{white}"
+        POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(_omz_git_prompt_info)$(_omz_git_prompt_status)'" %K{white}"
       else
         POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(_omz_git_prompt_info)'" %K{white}"
       fi
